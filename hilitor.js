@@ -3,7 +3,7 @@
 
 function Hilitor(id, tag)
 {
-
+  var count = 0; // for counting
   var targetNode = document.getElementById(id) || document.body;
   var hiliteTag = tag || "EM";
   var skipTags = new RegExp("^(?:" + hiliteTag + "|SCRIPT|FORM|SPAN)$");
@@ -19,6 +19,10 @@ function Hilitor(id, tag)
 
   // characters used to break up the input string into words
   var breakCharRegex = new RegExp("[^\\\w'-]+", "g");
+  
+  // counting
+  match.style.color = "#000";
+        count++;
 
   this.setMatchType = function(type)
   {
@@ -116,6 +120,7 @@ function Hilitor(id, tag)
     if(this.setRegex(input)) {
       this.hiliteWords(targetNode);
     }
+    document.getElementById('matches').innerHTML = count; // counting
   };
 
 }
