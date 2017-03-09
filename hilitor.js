@@ -1,7 +1,7 @@
 // Original JavaScript code by Chirp Internet: www.chirp.com.au
 // Please acknowledge use of this code by including this header.
 
-function Hilitor2(id, tag)
+function Hilitor(id, tag)
 {
 
   var targetNode = document.getElementById(id) || document.body;
